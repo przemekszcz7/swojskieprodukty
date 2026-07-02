@@ -57,11 +57,13 @@
         font-family: var(--font-sans);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
       }
 
       body {
         overflow-x: hidden;
         line-height: 1.7;
+        width: 100%;
       }
 
       /* Custom Selection Color */
@@ -149,8 +151,8 @@
         max-width: 1300px;
         margin-left: auto;
         margin-right: auto;
-        padding-left: clamp(1.5rem, 4vw, 4rem);
-        padding-right: clamp(1.5rem, 4vw, 4rem);
+        padding-left: clamp(1rem, 4vw, 4rem);
+        padding-right: clamp(1rem, 4vw, 4rem);
       }
 
       /* Section Layout */
@@ -300,7 +302,7 @@
 
       .hero-title {
         color: var(--color-white);
-        font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+        font-size: clamp(2.3rem, 5.5vw, 5.2rem);
         font-weight: 700;
         letter-spacing: -1.5px;
         margin-bottom: 1.5rem;
@@ -594,7 +596,7 @@
 
       .products-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
         gap: clamp(1.5rem, 2.5vw, 2.5rem);
       }
 
@@ -815,6 +817,7 @@
       #obszar-dzialania {
         background-color: var(--color-cream);
         position: relative;
+        overflow: hidden;
       }
 
       .chips-container {
@@ -1229,9 +1232,25 @@
           flex-direction: column;
           text-align: center;
         }
+
+        .image-wrapper::after {
+          top: 15px;
+          left: -15px;
+          right: 15px;
+          bottom: -15px;
+        }
       }
 
       @media (max-width: 480px) {
+        .logo {
+          font-size: 1.15rem;
+        }
+
+        .nav-cta .btn {
+          padding: 0.6rem 1.25rem;
+          font-size: 0.85rem;
+        }
+
         .hero-actions {
           flex-direction: column;
           width: 100%;
@@ -1248,6 +1267,18 @@
         .city-chip {
           padding: 0.7rem 1.4rem;
           font-size: 0.95rem;
+        }
+
+        .image-wrapper::after {
+          top: 10px;
+          left: -10px;
+          right: 10px;
+          bottom: -10px;
+        }
+
+        .cta-wrapper {
+          padding: 3rem 1.25rem;
+          border-radius: var(--border-radius-lg);
         }
       }
     </style>
