@@ -1,0 +1,6 @@
+{
+  "name": "Swojskie Produkty",
+  "description": "Profesjonalna, ekologiczna strona internetowa dla gospodarstwa Swojskie Produkty.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

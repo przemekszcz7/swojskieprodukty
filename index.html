@@ -1,0 +1,1737 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swojskie Produkty — Naturalne produkty prosto z gospodarstwa</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/KcY1XNQV/730515910-1648504933333104-5226396791102118779-n.jpg" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+      /* --- GLOBAL STYLES & RESET --- */
+      :root {
+        --color-cream: #FAF7F1;
+        --color-beige: #EFE4D4;
+        --color-olive: #5F7253;
+        --color-olive-light: rgba(95, 114, 83, 0.1);
+        --color-olive-dark: #46553C;
+        --color-dark: #3B2D24;
+        --color-dark-muted: #5A4A3F;
+        --color-white: #FFFFFF;
+        --color-gold: #C5A880;
+        --color-gold-light: #DFCEB7;
+        --color-gold-hover: #A38760;
+        
+        --font-serif: 'Playfair Display', Georgia, serif;
+        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        
+        --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        
+        --shadow-subtle: 0 4px 20px rgba(59, 45, 36, 0.03);
+        --shadow-medium: 0 10px 30px rgba(59, 45, 36, 0.06);
+        --shadow-elegant: 0 20px 40px rgba(59, 45, 36, 0.08);
+        --shadow-gold: 0 10px 25px rgba(197, 168, 128, 0.2);
+        
+        --border-radius-sm: 8px;
+        --border-radius-md: 16px;
+        --border-radius-lg: 24px;
+        --border-radius-xl: 32px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+        background-color: var(--color-cream);
+        color: var(--color-dark);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        overflow-x: hidden;
+        line-height: 1.7;
+      }
+
+      /* Custom Selection Color */
+      ::selection {
+        background-color: var(--color-beige);
+        color: var(--color-dark);
+      }
+
+      /* Typographical Defaults */
+      h1, h2, h3, h4, .font-serif {
+        font-family: var(--font-serif);
+        font-weight: 600;
+        line-height: 1.25;
+        color: var(--color-dark);
+      }
+
+      p, li {
+        font-weight: 400;
+        font-size: clamp(0.95rem, 1.1vw, 1.125rem);
+        color: var(--color-dark-muted);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition-smooth);
+      }
+
+      button, .btn {
+        font-family: var(--font-sans);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition-smooth);
+        border-radius: 50px;
+        font-size: clamp(0.9rem, 1vw, 1.05rem);
+        padding: 1rem 2.25rem;
+      }
+
+      /* --- BUTTON VARIATIONS --- */
+      .btn-primary {
+        background-color: var(--color-olive);
+        color: var(--color-white);
+        box-shadow: 0 4px 15px rgba(95, 114, 83, 0.2);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--color-olive-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(95, 114, 83, 0.3);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--color-dark);
+        border: 2px solid var(--color-beige);
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--color-olive);
+        background-color: rgba(95, 114, 83, 0.03);
+        transform: translateY(-3px);
+      }
+
+      .btn-gold {
+        background-color: var(--color-gold);
+        color: var(--color-white);
+        box-shadow: var(--shadow-gold);
+      }
+
+      .btn-gold:hover {
+        background-color: var(--color-gold-hover);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(197, 168, 128, 0.35);
+      }
+
+      /* Container */
+      .container {
+        width: 100%;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: clamp(1.5rem, 4vw, 4rem);
+        padding-right: clamp(1.5rem, 4vw, 4rem);
+      }
+
+      /* Section Layout */
+      section {
+        padding: clamp(4rem, 8vw, 8rem) 0;
+        position: relative;
+        scroll-margin-top: clamp(4.5rem, 6vw, 5.5rem);
+      }
+
+      /* --- NAVIGATION HEADER --- */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: rgba(250, 247, 241, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(239, 228, 212, 0.5);
+        transition: var(--transition-smooth);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: clamp(4.5rem, 6vw, 5.5rem);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+        color: var(--color-dark);
+        letter-spacing: -0.5px;
+      }
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: clamp(1.5rem, 3vw, 3rem);
+        list-style: none;
+      }
+
+      .nav-link {
+        font-size: clamp(0.9rem, 1vw, 1rem);
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+        color: var(--color-dark-muted);
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-olive);
+        transition: var(--transition-smooth);
+      }
+
+      .nav-link:hover {
+        color: var(--color-olive);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .nav-cta .btn {
+        padding: 0.75rem 1.75rem;
+        font-size: 0.95rem;
+      }
+
+      /* --- HERO SECTION --- */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: clamp(6.5rem, 9vw, 8.5rem);
+        background: 
+          linear-gradient(135deg, rgba(59, 45, 36, 0.94) 0%, rgba(59, 45, 36, 0.8) 50%, rgba(59, 45, 36, 0.45) 100%),
+          url('https://i.ibb.co/d4DrJVgN/730584808-1648504263333171-6549480213560179598-n.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Organic background decorative pattern */
+      #hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M30,50 Q40,30 50,50 T70,50' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1.5'/%3E%3Cpath d='M20,70 Q35,55 50,70 T80,70' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1.5'/%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 4rem;
+        align-items: center;
+        width: 100%;
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hero-tagline {
+        font-family: var(--font-sans);
+        color: var(--color-gold-light);
+        text-transform: uppercase;
+        font-size: clamp(0.85rem, 1vw, 1rem);
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .hero-tagline::before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 1px;
+        background-color: var(--color-gold-light);
+      }
+
+      .hero-title {
+        color: var(--color-white);
+        font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+        font-weight: 700;
+        letter-spacing: -1.5px;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .hero-subtitle {
+        color: rgba(250, 247, 241, 0.85);
+        font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+        max-width: 620px;
+        margin-bottom: 2.25rem;
+        line-height: 1.6;
+      }
+
+      /* Hero lists */
+      .hero-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.75rem, 1.5vw, 1.5rem);
+        list-style: none;
+        margin-bottom: 3rem;
+      }
+
+      .hero-list-item {
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: var(--color-white);
+        font-family: var(--font-sans);
+        font-weight: 500;
+        font-size: clamp(0.85rem, 1vw, 1rem);
+        padding: 0.6rem 1.3rem;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        backdrop-filter: blur(4px);
+        transition: var(--transition-smooth);
+      }
+
+      .hero-list-item:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-color: var(--color-gold-light);
+        transform: translateY(-2px);
+      }
+
+      .hero-list-item svg {
+        width: 14px;
+        height: 14px;
+        fill: none;
+        stroke: var(--color-gold-light);
+        stroke-width: 3;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-actions .btn-secondary {
+        color: var(--color-white);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .hero-actions .btn-secondary:hover {
+        border-color: var(--color-white);
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      /* Floating Hero Card */
+      .hero-right {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .floating-card {
+        background: rgba(59, 45, 36, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: clamp(2rem, 3vw, 3.5rem);
+        border-radius: var(--border-radius-xl);
+        box-shadow: var(--shadow-elegant);
+        width: 100%;
+        max-width: 420px;
+        position: relative;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-12px); }
+      }
+
+      .floating-card-title {
+        font-family: var(--font-serif);
+        font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+        color: var(--color-white);
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .floating-card-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 2px;
+        background: var(--color-gold);
+        border-radius: 2px;
+      }
+
+      .floating-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .floating-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: rgba(250, 247, 241, 0.9);
+        font-size: clamp(1rem, 1.1vw, 1.15rem);
+        font-weight: 500;
+      }
+
+      .floating-item-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: rgba(197, 168, 128, 0.15);
+        border: 1px solid rgba(197, 168, 128, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .floating-item-icon svg {
+        width: 14px;
+        height: 14px;
+        fill: none;
+        stroke: var(--color-gold-light);
+        stroke-width: 3;
+      }
+
+      /* --- O NAS SECTION --- */
+      #o-nas {
+        background-color: var(--color-cream);
+        overflow: hidden;
+      }
+
+      /* Subtle nature background vectors for sections */
+      .bg-leaf-decor {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        pointer-events: none;
+        opacity: 0.12;
+      }
+
+      .decor-left {
+        bottom: -50px;
+        left: -100px;
+        transform: rotate(45deg);
+      }
+
+      .decor-right {
+        top: -100px;
+        right: -100px;
+        transform: rotate(-135deg);
+      }
+
+      .grid-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: center;
+      }
+
+      .about-left {
+        position: relative;
+        z-index: 2;
+      }
+
+      .section-subtitle {
+        font-family: var(--font-sans);
+        color: var(--color-olive);
+        text-transform: uppercase;
+        font-size: clamp(0.85rem, 1vw, 0.95rem);
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 3.5vw, 3.5rem);
+        color: var(--color-dark);
+        margin-bottom: 1.75rem;
+        letter-spacing: -1px;
+      }
+
+      .about-text {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+
+      .about-highlight {
+        border-left: 3px solid var(--color-gold);
+        padding-left: 1.5rem;
+        margin: 2rem 0;
+        font-style: italic;
+        font-family: var(--font-serif);
+        font-size: clamp(1.1rem, 1.3vw, 1.3rem);
+        color: var(--color-dark);
+      }
+
+      .about-right {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Elegant WordPress elements: image frame, offset border */
+      .image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        border-radius: var(--border-radius-xl);
+        aspect-ratio: 4 / 5;
+        z-index: 2;
+      }
+
+      .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--border-radius-xl);
+        box-shadow: var(--shadow-elegant);
+        border: 8px solid var(--color-white);
+        transition: var(--transition-smooth);
+      }
+
+      .image-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 25px;
+        left: -25px;
+        right: 25px;
+        bottom: -25px;
+        border: 2px solid var(--color-gold);
+        border-radius: var(--border-radius-xl);
+        z-index: -1;
+        transition: var(--transition-smooth);
+        pointer-events: none;
+      }
+
+      .about-right:hover .image-wrapper img {
+        transform: translate(10px, -10px);
+      }
+
+      .about-right:hover .image-wrapper::after {
+        transform: translate(-10px, 10px);
+      }
+
+      /* --- NASZE PRODUKTY --- */
+      #produkty {
+        background-color: var(--color-white);
+        position: relative;
+      }
+
+      .section-header-center {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto clamp(3rem, 5vw, 5rem) auto;
+      }
+
+      .section-header-center .section-subtitle {
+        justify-content: center;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: clamp(1.5rem, 2.5vw, 2.5rem);
+      }
+
+      .product-card {
+        background-color: var(--color-cream);
+        border: 1px solid rgba(59, 45, 36, 0.05);
+        border-radius: var(--border-radius-lg);
+        padding: clamp(2rem, 3vw, 3rem);
+        transition: var(--transition-bounce);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        box-shadow: var(--shadow-subtle);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Decorative subtle wood-grain line or corner motif */
+      .product-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: transparent;
+        transition: var(--transition-smooth);
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-elegant);
+        background-color: var(--color-white);
+        border-color: rgba(95, 114, 83, 0.15);
+      }
+
+      .product-card:hover::before {
+        background-color: var(--color-olive);
+      }
+
+      .product-icon-container {
+        width: 70px;
+        height: 70px;
+        border-radius: var(--border-radius-md);
+        background-color: var(--color-beige);
+        color: var(--color-olive);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition-smooth);
+      }
+
+      .product-card:hover .product-icon-container {
+        background-color: var(--color-olive);
+        color: var(--color-white);
+        transform: scale(1.05) rotate(3deg);
+      }
+
+      .product-icon-container svg {
+        width: 36px;
+        height: 36px;
+      }
+
+      .product-card-title {
+        font-size: clamp(1.3rem, 1.6vw, 1.6rem);
+        font-weight: 600;
+        color: var(--color-dark);
+        margin-bottom: 0.5rem;
+      }
+
+      .product-card-desc {
+        color: var(--color-dark-muted);
+        line-height: 1.6;
+      }
+
+      /* --- DLACZEGO MY --- */
+      #dlaczego-my {
+        background-color: var(--color-cream);
+        position: relative;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(1.5rem, 2vw, 2.5rem);
+      }
+
+      @media (max-width: 1024px) {
+        .why-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .why-card {
+        background-color: var(--color-white);
+        border-radius: var(--border-radius-lg);
+        padding: clamp(2rem, 2.5vw, 3rem);
+        box-shadow: var(--shadow-medium);
+        transition: var(--transition-bounce);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+      }
+
+      .why-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: var(--shadow-elegant);
+      }
+
+      .why-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: var(--color-olive-light);
+        color: var(--color-olive);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition-smooth);
+      }
+
+      .why-card:hover .why-icon {
+        background-color: var(--color-gold);
+        color: var(--color-white);
+      }
+
+      .why-icon svg {
+        width: 30px;
+        height: 30px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.2;
+      }
+
+      .why-card-title {
+        font-size: clamp(1.15rem, 1.3vw, 1.35rem);
+        font-weight: 600;
+        color: var(--color-dark);
+      }
+
+      .why-card-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--color-dark-muted);
+      }
+
+      /* --- GALERIA --- */
+      #galeria {
+        background-color: var(--color-white);
+        position: relative;
+      }
+
+      /* Masonry Layout */
+      .masonry-wrapper {
+        column-count: 3;
+        column-gap: 1.5rem;
+        width: 100%;
+      }
+
+      .gallery-item {
+        background-color: var(--color-cream);
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+        border-radius: var(--border-radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-subtle);
+        transition: var(--transition-smooth);
+        border: 4px solid var(--color-white);
+        position: relative;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        transition: var(--transition-smooth);
+        border-radius: calc(var(--border-radius-md) - 4px);
+      }
+
+      /* Zoom effect & soft border on hover */
+      .gallery-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(95, 114, 83, 0.15);
+        opacity: 0;
+        transition: var(--transition-smooth);
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.02);
+        box-shadow: var(--shadow-elegant);
+        border-color: var(--color-gold-light);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+
+      .gallery-item:hover::before {
+        opacity: 1;
+      }
+
+      /* --- OBSZAR DZIAŁANIA --- */
+      #obszar-dzialania {
+        background-color: var(--color-cream);
+        position: relative;
+      }
+
+      .chips-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: clamp(1rem, 1.5vw, 1.5rem);
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .city-chip {
+        background-color: var(--color-white);
+        border: 1px solid var(--color-beige);
+        border-radius: 50px;
+        padding: 0.85rem 2rem;
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: clamp(1rem, 1.2vw, 1.25rem);
+        color: var(--color-dark);
+        box-shadow: var(--shadow-subtle);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: var(--transition-bounce);
+      }
+
+      .city-chip svg {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: var(--color-olive);
+        stroke-width: 2;
+        transition: var(--transition-smooth);
+      }
+
+      .city-chip:hover {
+        background-color: var(--color-olive);
+        color: var(--color-white);
+        border-color: var(--color-olive);
+        transform: scale(1.08) translateY(-3px);
+        box-shadow: var(--shadow-medium);
+      }
+
+      .city-chip:hover svg {
+        stroke: var(--color-white);
+        transform: rotate(15deg);
+      }
+
+      .delivery-info {
+        text-align: center;
+        margin-top: 3.5rem;
+        font-size: clamp(1.05rem, 1.3vw, 1.3rem);
+        color: var(--color-dark-muted);
+        font-weight: 500;
+      }
+
+      .delivery-info span {
+        color: var(--color-olive);
+        font-weight: 700;
+        border-bottom: 2px dashed var(--color-gold);
+        padding-bottom: 2px;
+      }
+
+      /* --- CTA BANNER --- */
+      #cta {
+        padding: 0;
+        background-color: var(--color-white);
+      }
+
+      .cta-wrapper {
+        background: 
+          linear-gradient(135deg, rgba(70, 85, 60, 0.95) 0%, rgba(95, 114, 83, 0.9) 100%),
+          url('https://i.ibb.co/d4DrJVgN/730584808-1648504263333171-6549480213560179598-n.jpg') no-repeat center center;
+        background-size: cover;
+        border-radius: var(--border-radius-xl);
+        padding: clamp(3.5rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+        text-align: center;
+        color: var(--color-white);
+        box-shadow: var(--shadow-elegant);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M10,60 Q30,40 50,60 T90,60' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='2'/%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+
+      .cta-title {
+        color: var(--color-white);
+        font-size: clamp(2rem, 3.5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+        max-width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-desc {
+        color: rgba(250, 247, 241, 0.9);
+        font-size: clamp(1.1rem, 1.3vw, 1.25rem);
+        max-width: 650px;
+        margin: 0 auto 3rem auto;
+      }
+
+      /* --- KONTAKT --- */
+      #kontakt {
+        background-color: var(--color-cream);
+        position: relative;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(1.5rem, 2.5vw, 2.5rem);
+      }
+
+      .contact-card {
+        background-color: var(--color-white);
+        border-radius: var(--border-radius-lg);
+        padding: clamp(2.5rem, 4vw, 4rem) clamp(2rem, 3vw, 3rem);
+        box-shadow: var(--shadow-medium);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        transition: var(--transition-bounce);
+        border: 1px solid rgba(59, 45, 36, 0.03);
+      }
+
+      .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-elegant);
+        border-color: var(--color-gold-light);
+      }
+
+      .contact-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background-color: var(--color-olive-light);
+        color: var(--color-olive);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition-smooth);
+      }
+
+      .contact-card:hover .contact-icon {
+        background-color: var(--color-olive);
+        color: var(--color-white);
+        transform: scale(1.08);
+      }
+
+      .contact-icon svg {
+        width: 32px;
+        height: 32px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+      }
+
+      .contact-card-title {
+        font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+        font-weight: 600;
+        color: var(--color-dark);
+      }
+
+      .contact-value {
+        font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+        font-weight: 700;
+        color: var(--color-dark);
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-card-desc {
+        font-size: 0.95rem;
+        color: var(--color-dark-muted);
+        line-height: 1.6;
+      }
+
+      .contact-card .btn {
+        margin-top: 1rem;
+        padding: 0.75rem 2rem;
+        font-size: 0.95rem;
+        width: 100%;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        background-color: var(--color-dark);
+        color: var(--color-cream);
+        padding: 5rem 0 3rem 0;
+        position: relative;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--color-white);
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-desc {
+        color: rgba(250, 247, 241, 0.7);
+        max-width: 360px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .footer-heading {
+        color: var(--color-white);
+        font-size: 1.15rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--color-gold);
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-link {
+        color: rgba(250, 247, 241, 0.7);
+        font-size: 0.95rem;
+      }
+
+      .footer-link:hover {
+        color: var(--color-gold);
+        padding-left: 5px;
+      }
+
+      .footer-social-box {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .footer-social-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition-smooth);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-social-btn:hover {
+        background-color: var(--color-gold);
+        color: var(--color-dark);
+        border-color: var(--color-gold);
+        transform: translateY(-3px);
+      }
+
+      .footer-social-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .copyright {
+        font-size: 0.9rem;
+        color: rgba(250, 247, 241, 0.5);
+      }
+
+      /* --- MEDIA QUERIES (RESPONSIVENESS) --- */
+      @media (max-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          text-align: center;
+        }
+
+        .hero-left {
+          align-items: center;
+        }
+
+        .hero-tagline {
+          justify-content: center;
+        }
+
+        .hero-tagline::before {
+          display: none;
+        }
+
+        .hero-list {
+          justify-content: center;
+        }
+
+        .hero-actions {
+          justify-content: center;
+        }
+
+        .hero-right {
+          justify-content: center;
+        }
+
+        .floating-card {
+          max-width: 480px;
+        }
+
+        .grid-two-col {
+          grid-template-columns: 1fr;
+          gap: 4rem;
+        }
+
+        .about-left {
+          order: 2;
+          text-align: center;
+        }
+
+        .about-highlight {
+          border-left: none;
+          border-top: 2px solid var(--color-gold);
+          border-bottom: 2px solid var(--color-gold);
+          padding: 1.5rem 0;
+          margin: 2rem auto;
+          max-width: 550px;
+        }
+
+        .about-right {
+          order: 1;
+        }
+
+        .masonry-wrapper {
+          column-count: 2;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1.5fr 1fr;
+          gap: 3rem;
+        }
+
+        .footer-grid > *:last-child {
+          grid-column: span 2;
+        }
+      }
+
+      @media (max-width: 768px) {
+        html {
+          font-size: 15px;
+        }
+
+        .nav-menu {
+          display: none; /* Keep simple & clean on mobile, focus on call action */
+        }
+
+        .masonry-wrapper {
+          column-count: 1;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .footer-grid > *:last-child {
+          grid-column: span 1;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-actions {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .hero-actions .btn {
+          width: 100%;
+        }
+
+        .floating-card {
+          padding: 1.5rem;
+        }
+        
+        .city-chip {
+          padding: 0.7rem 1.4rem;
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header id="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          Swojskie Produkty
+        </a>
+        <ul class="nav-menu">
+          <li><a href="#o-nas" class="nav-link">O nas</a></li>
+          <li><a href="#produkty" class="nav-link">Nasze produkty</a></li>
+          <li><a href="#dlaczego-my" class="nav-link">Dlaczego my</a></li>
+          <li><a href="#galeria" class="nav-link">Galeria</a></li>
+          <li><a href="#obszar-dzialania" class="nav-link">Dostawa</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="tel:609536212" class="btn btn-primary">Zadzwoń</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1 HERO SECTION -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <span class="hero-tagline">Smak tradycji z Wielkopolski</span>
+            <h1 class="hero-title">Swojskie Produkty</h1>
+            <p class="hero-subtitle">
+              Produkty pochodzą z własnego gospodarstwa. Przygotowywane z sercem, dbałością o jakość i poszanowaniem tradycyjnych receptur.
+            </p>
+            <ul class="hero-list">
+              <li class="hero-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Świeże mleko
+              </li>
+              <li class="hero-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Naturalne sery
+              </li>
+              <li class="hero-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Prawdziwe masło
+              </li>
+              <li class="hero-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Tradycyjne wędliny
+              </li>
+              <li class="hero-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Świeże warzywa
+              </li>
+            </ul>
+            <div class="hero-actions">
+              <a href="tel:609536212" class="btn btn-gold">Zadzwoń teraz</a>
+              <a href="#produkty" class="btn btn-secondary">Przejdź do oferty</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="floating-card">
+              <h3 class="floating-card-title">Gospodarstwo Premium</h3>
+              <ul class="floating-list">
+                <li class="floating-item">
+                  <div class="floating-item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  Własne gospodarstwo
+                </li>
+                <li class="floating-item">
+                  <div class="floating-item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  Naturalne produkty
+                </li>
+                <li class="floating-item">
+                  <div class="floating-item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  Świeżość każdego dnia
+                </li>
+                <li class="floating-item">
+                  <div class="floating-item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; stroke: var(--color-gold-light);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  Tradycyjne receptury
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 O NAS SECTION -->
+    <section id="o-nas">
+      <!-- Leaf decorations -->
+      <svg class="bg-leaf-decor decor-left" viewBox="0 0 100 100">
+        <path d="M10,80 Q30,50 60,70 T90,30" fill="none" stroke="var(--color-olive)" stroke-width="1" />
+        <path d="M30,65 Q45,45 60,60" fill="none" stroke="var(--color-gold)" stroke-width="1.5" />
+      </svg>
+      <div class="container">
+        <div class="grid-two-col">
+          <div class="about-left">
+            <span class="section-subtitle">Nasza Historia i Filozofia</span>
+            <h2 class="section-title">Pasja zrodzona z miłości do ziemi</h2>
+            <p class="about-text">
+              Nasze gospodarstwo to miejsce, gdzie czas płynie wolniej, a przyroda wyznacza rytm każdego dnia. Wierzymy, że najlepsze smaki to te, które powstają bez pośpiechu, w harmonii z naturą. Od wielu lat dbamy o to, aby na Wasze stoły trafiały produkty pełnowartościowe, zdrowe i wolne od sztucznych ulepszaczy.
+            </p>
+            <div class="about-highlight">
+              „Wierzymy w uczciwe rolnictwo, lokalność i szacunek do zwierząt oraz ziemi, która nas karmi.”
+            </div>
+            <p class="about-text">
+              Wszystkie oferowane przez nas produkty przygotowujemy na terenie naszego własnego gospodarstwa z zachowaniem najwyższych standardów jakości. Nasze krowy dają mleko o bogatym smaku, z którego formujemy tradycyjne sery i masło. Wędliny wędzimy dymem olchowym, a sezonowe warzywa rosną bez sztucznych nawozów.
+            </p>
+          </div>
+          <div class="about-right">
+            <div class="image-wrapper">
+              <img src="https://i.ibb.co/d4DrJVgN/730584808-1648504263333171-6549480213560179598-n.jpg" alt="Zdjęcie gospodarstwa i natury" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 NASZE PRODUKTY SECTION -->
+    <section id="produkty">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-subtitle">Prosto z gospodarstwa</span>
+          <h2 class="section-title">Co dla Państwa przygotowujemy?</h2>
+        </div>
+        
+        <div class="products-grid">
+          <!-- Świeże mleko -->
+          <div class="product-card">
+            <div>
+              <h3 class="product-card-title">Świeże mleko</h3>
+              <p class="product-card-desc">
+                Pełnotłuste, niefiltrowane, prosto z codziennego udoju. Charakteryzuje się kremową konsystencją i naturalnym, głębokim smakiem prawdziwego wiejskiego mleka.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sery -->
+          <div class="product-card">
+            <div>
+              <h3 class="product-card-title">Naturalne sery</h3>
+              <p class="product-card-desc">
+                Zarówno delikatne sery świeże, jak i bogate w smaku sery dojrzewające. Wyrabiane wyłącznie z tłustego, czystego mleka z dodatkiem naturalnych ziół.
+              </p>
+            </div>
+          </div>
+
+          <!-- Masło -->
+          <div class="product-card">
+            <div>
+              <h3 class="product-card-title">Prawdziwe masło</h3>
+              <p class="product-card-desc">
+                Tradycyjnie ubijane, o wyjątkowo kremowej teksturze i delikatnym zapachu słodkiej śmietanki. Doskonałe źródło czystego, naturalnego tłuszczu mlecznego.
+              </p>
+            </div>
+          </div>
+
+          <!-- Swojskie wędliny -->
+          <div class="product-card">
+            <div>
+              <h3 class="product-card-title">Swojskie wędliny</h3>
+              <p class="product-card-desc">
+                Tradycyjne szynki, kiełbasy i boczki, wędzone dymem olchowym. Peklowane przy użyciu wyłącznie naturalnych ziół, czosnku i soli, bez grama chemii.
+              </p>
+            </div>
+          </div>
+
+          <!-- Warzywa sezonowe -->
+          <div class="product-card">
+            <div>
+              <h3 class="product-card-title">Warzywa sezonowe</h3>
+              <p class="product-card-desc">
+                Chrupkie warzywa prosto z czystej ziemi, nawożone wyłącznie naturalnym kompostem. Pełne witamin, słońca i prawdziwego smaku – tak jak w ogrodzie u babci.
+              </p>
+            </div>
+          </div>
+
+          <!-- Naturalne produkty -->
+          <div class="product-card">
+            <div>
+              <h3 class="product-card-title">Naturalne produkty</h3>
+              <p class="product-card-desc">
+                Różnorodne dary naszego gospodarstwa – jajka od kur z wolnego wybiegu, swojskie przetwory w słoikach i inne tradycyjne wyroby robione w małych partiach.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 DLACZEGO MY SECTION -->
+    <section id="dlaczego-my">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-subtitle">Nasze Atuty</span>
+          <h2 class="section-title">Dlaczego warto wybrać nasze wyroby?</h2>
+        </div>
+        
+        <div class="why-grid">
+          <!-- Atut 1 -->
+          <div class="why-card">
+            <div class="why-icon">
+              <!-- Barn / House SVG icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M3 10L12 3L21 10V20C21 20.6 20.6 21 20 21H4C3.4 21 3 20.6 3 20V10Z" />
+                <path d="M9 21V12H15V21" />
+              </svg>
+            </div>
+            <h3 class="why-card-title">Własne gospodarstwo</h3>
+            <p class="why-card-desc">
+              Pełna kontrola nad każdym etapem wytwarzania – od wyżywienia zwierząt po ostateczne pakowanie i transport.
+            </p>
+          </div>
+
+          <!-- Atut 2 -->
+          <div class="why-card">
+            <div class="why-icon">
+              <!-- Sparkles / Natural Leaf SVG icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 18C8.7 18 6 15.3 6 12C6 11.2 6.2 10.4 6.5 9.7C8.1 11.3 10.3 12.3 12.8 12.3C13.2 12.3 13.5 12.3 13.9 12.2C13.2 14.5 11 16.2 8.4 16.2C10.1 17.3 12.1 17.9 14.2 17.6C15.8 16.4 16.8 14.6 16.8 12.5C16.8 9.5 14.7 7 12 7V18Z" />
+              </svg>
+            </div>
+            <h3 class="why-card-title">Naturalne składniki</h3>
+            <p class="why-card-desc">
+              Zero konserwantów, barwników, sztucznych aromatów, utwardzaczy czy polepszaczy. Czysta natura w najprostszej postaci.
+            </p>
+          </div>
+
+          <!-- Atut 3 -->
+          <div class="why-card">
+            <div class="why-icon">
+              <!-- Sun / Freshness SVG icon -->
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.1 4.9L17.7 6.3M6.3 17.7L4.9 19.1M19.1 19.1L17.7 17.7M6.3 6.3L4.9 4.9" />
+              </svg>
+            </div>
+            <h3 class="why-card-title">Świeżość każdego dnia</h3>
+            <p class="why-card-desc">
+              Nasze wyroby są robione w małych partiach na bieżąco, dzięki czemu gwarantujemy wyjątkowy aromat oraz maksymalną świeżość.
+            </p>
+          </div>
+
+          <!-- Atut 4 -->
+          <div class="why-card">
+            <div class="why-icon">
+              <!-- Heart SVG icon -->
+              <svg viewBox="0 0 24 24">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+              </svg>
+            </div>
+            <h3 class="why-card-title">Tradycyjny smak</h3>
+            <p class="why-card-desc">
+              Smak, który pamiętają nasi rodzice i dziadkowie. Receptury przekazywane z pokolenia na pokolenie są naszym największym skarbem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 GALERIA SECTION -->
+    <section id="galeria">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-subtitle">Zdjęcia z gospodarstwa</span>
+          <h2 class="section-title">Galeria naszych wyrobów</h2>
+        </div>
+        
+        <div class="masonry-wrapper">
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/v4w0hY3k/730511094-1647701220080142-5169233503345033977-n.jpg" alt="Swojskie produkty fot 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/VpmnN5yg/730640398-1647701243413473-241100219712589891-n.jpg" alt="Swojskie produkty fot 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/FkVYQ9CX/731059074-1647701276746803-1589822240075944011-n.jpg" alt="Swojskie produkty fot 3" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/KgztFM7/730667152-1647701296746801-6836327647730628189-n.jpg" alt="Swojskie produkty fot 4" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/r2dy5Br3/727970694-1647701330080131-1768604589928334514-n.jpg" alt="Swojskie produkty fot 5" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://i.ibb.co/JFzcy6Cm/728243810-1647701360080128-6569563566458672762-n.jpg" alt="Swojskie produkty fot 6" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 OBSZAR DZIAŁANIA SECTION -->
+    <section id="obszar-dzialania">
+      <svg class="bg-leaf-decor decor-right" viewBox="0 0 100 100">
+        <path d="M10,80 Q30,50 60,70 T90,30" fill="none" stroke="var(--color-olive)" stroke-width="1" />
+        <path d="M30,65 Q45,45 60,60" fill="none" stroke="var(--color-gold)" stroke-width="1.5" />
+      </svg>
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-subtitle">Zasięg naszych dostaw</span>
+          <h2 class="section-title">Gdzie dowozimy nasze produkty?</h2>
+          <p class="about-text" style="text-align: center; max-width: 600px; margin: 1rem auto 0 auto;">
+            Dostarczamy świeże wyroby prosto pod drzwi Twojego domu na terenie Poznania i okolicznych miejscowości.
+          </p>
+        </div>
+
+        <div class="chips-container">
+          <!-- Poznań -->
+          <div class="city-chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Poznań
+          </div>
+          <!-- Lednogóra -->
+          <div class="city-chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Lednogóra
+          </div>
+          <!-- Kostrzyn -->
+          <div class="city-chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Kostrzyn
+          </div>
+          <!-- Tulce -->
+          <div class="city-chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Tulce
+          </div>
+          <!-- Gniezno -->
+          <div class="city-chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Gniezno
+          </div>
+          <!-- Swarzędz -->
+          <div class="city-chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Swarzędz
+          </div>
+          <!-- Pobiedziska -->
+          <div class="city-chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Pobiedziska
+          </div>
+          <!-- Zalasewo -->
+          <div class="city-chip">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Zalasewo
+          </div>
+        </div>
+
+        <p class="delivery-info">
+          Masz pytania dotyczące terminu dostawy w Twojej okolicy? <span>Zadzwoń do nas bezpośrednio!</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- 7 CTA BANNER SECTION -->
+    <section id="cta">
+      <div class="container">
+        <div class="cta-wrapper">
+          <h2 class="cta-title">Zapraszamy po naturalne produkty prosto z gospodarstwa</h2>
+          <p class="cta-desc">
+            Przekonaj się jak smakuje prawdziwe, świeże wiejskie jedzenie. Zadzwoń do nas, złóż zamówienie i ciesz się smakiem zdrowia na swoim talerzu.
+          </p>
+          <a href="tel:609536212" class="btn btn-gold btn-large">Zadzwoń teraz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 KONTAKT SECTION -->
+    <section id="kontakt">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-subtitle">Skontaktuj się z nami</span>
+          <h2 class="section-title">Napisz lub zadzwoń</h2>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Telefon -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Telefon</h3>
+            <span class="contact-value">609 536 212</span>
+            <p class="contact-card-desc">
+              Zadzwoń do nas bezpośrednio, aby zapytać o aktualny asortyment, złożyć zamówienie lub ustalić dzień dostawy.
+            </p>
+            <a href="tel:609536212" class="btn btn-primary">Zadzwoń teraz</a>
+          </div>
+
+          <!-- Facebook -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Facebook</h3>
+            <span class="contact-value">Profil Gospodarstwa</span>
+            <p class="contact-card-desc">
+              Odwiedź nasz profil na Facebooku, aby zobaczyć aktualne zdjęcia z gospodarstwa, nowości oraz opinie klientów.
+            </p>
+            <a href="https://www.facebook.com/profile.php?id=100045208402187" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Przejdź do profilu</a>
+          </div>
+
+          <!-- Obszar działania / Dostawa -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <!-- Map SVG icon -->
+              <svg viewBox="0 0 24 24">
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+                <line x1="9" y1="3" x2="9" y2="18" />
+                <line x1="15" y1="6" x2="15" y2="21" />
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Obszar dostaw</h3>
+            <span class="contact-value">Poznań i okolice</span>
+            <p class="contact-card-desc">
+              Dowozy realizujemy w określone dni tygodnia. Dbamy o to, by produkty były doskonale zabezpieczone w trakcie transportu.
+            </p>
+            <a href="#obszar-dzialania" class="btn btn-primary">Zobacz miasta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo">
+              Swojskie Produkty
+            </div>
+            <p class="footer-desc">
+              Naturalne produkty z własnego gospodarstwa dowożone bezpośrednio do domów naszych klientów. Czysty skład, tradycyjny smak.
+            </p>
+          </div>
+          <div>
+            <h4 class="footer-heading">Menu</h4>
+            <ul class="footer-links">
+              <li><a href="#o-nas" class="footer-link">O nas</a></li>
+              <li><a href="#produkty" class="footer-link">Nasze produkty</a></li>
+              <li><a href="#dlaczego-my" class="footer-link">Dlaczego my</a></li>
+              <li><a href="#galeria" class="footer-link">Galeria</a></li>
+              <li><a href="#obszar-dzialania" class="footer-link">Dostawa</a></li>
+              <li><a href="#kontakt" class="footer-link">Kontakt</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-heading">Znajdziesz nas na</h4>
+            <ul class="footer-links">
+              <li><a href="tel:609536212" class="footer-link">Tel: 609 536 212</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100045208402187" target="_blank" rel="noopener noreferrer" class="footer-link">Profil Facebook</a></li>
+            </ul>
+            <div class="footer-social-box">
+              <a href="https://www.facebook.com/profile.php?id=100045208402187" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="tel:609536212" class="footer-social-btn" aria-label="Phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">&copy; 2026 Swojskie Produkty. Wszystkie prawa zastrzeżone.</p>
+          <p class="copyright">Tradycja • Zdrowie • Natura</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
